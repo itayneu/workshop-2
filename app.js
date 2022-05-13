@@ -45,7 +45,6 @@ function onStoneClicked(target) {
   current.stone = target.id;
   changeBackground(target, "red");
   current.clicked.push(target);
-  alert(current.stone);
 }
 
 avengers.forEach((avenger) => {
@@ -60,7 +59,6 @@ function onAvengerClicked(target) {
   }
   changeBackground(target, "blue");
   current.clicked.push(target);
-  alert(current.avengers);
 }
 
 glove.addEventListener("click", ({ target }) => {
@@ -75,14 +73,13 @@ function onGloveClicked(target) {
         dataAvengers = [item.avengers[0].name];
       }
       if (isSameArray(dataAvengers, current.avengers)) {
-        alert("yes");
+        alert("Success");
         if (!correct.includes(item)) {
           correct.push(item);
-          alert("here");
         }
         alert(correct);
         if (isSameArray(correct, allStones)) {
-          alert("all");
+          alert("Found Them All!");
         }
       } else {
         current.clicked.map((target) => {
